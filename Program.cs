@@ -1,105 +1,68 @@
 ﻿using System;
 
-namespace LineComparisionProblem
+namespace AddressBookManagement
 {
     internal class Program
     {
-        public static void UC_1_Length(int x1, int y1, int x2, int y2)
-        {
-            double result, sum;
-            sum = ((x2 - x1) * (x2 - x1)) + ((y2 - y1) * (y2 - y1));
-            result = Math.Sqrt(sum);
-            Console.WriteLine(result);
-        }
-
-
-        public static void UC_2_CheckLines(int a1, int b1, int a2, int b2)
-        {
-            int len1, len2;
-            if (a1 == a2)
-            {
-                Console.WriteLine(b1.Equals(b2));
-            }
-            else
-            {
-                len1 = b1 - a1;
-                len2 = b2 - a2;
-                Console.WriteLine(len1.Equals(len2));
-            }
-        }
-
-
-        public static void UC_3_CompareLines(int l1, int m1, int l2, int m2)
-        {
-            int le1, le2;
-            if (l1 == l2)
-            {
-                int comp = m1.CompareTo(m2);
-                if (comp == 0)
-                {
-                    Console.WriteLine("Both line are equals");
-                }
-                else if (comp >= 0)
-                {
-                    Console.WriteLine("Second line is Smaller than first");
-                }
-                else
-                {
-                    Console.WriteLine("Second line is bigger than First");
-                }
-            }
-            else
-            {
-                le1 = m1 - l1;
-                le2 = m2 - l2;
-                int comp = le1.CompareTo(le2);
-                if (comp == 0)
-                {
-                    Console.WriteLine("Both line are equals");
-                }
-                else if (comp >= 0)
-                {
-                    Console.WriteLine("Second line is Smaller than first");
-                }
-                else
-                {
-                    Console.WriteLine("Second line is bigger than First");
-                }
-            }
-
-        }
-
-
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, Welcome to Line Comparison problem:");
+            Console.WriteLine("Welcome To AddressBook Program");
 
-            Console.WriteLine("Please enter X co-ordinates: (x1 and y1)");
-            int x1 = Convert.ToInt32(Console.ReadLine());
-            int y1 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Please enter Y co-ordinates: (x2 and y2)");
-            int x2 = Convert.ToInt32(Console.ReadLine());
-            int y2 = Convert.ToInt32(Console.ReadLine());
-            Program.UC_1_Length(x1, y1, x2, y2);
+            /*UC_Program uC_1 = new UC_Program();
+            Person person = new Person();
+            person.First_Name = "Abhilash";
+            person.Last_Name = "Meher";
+            person.Address = "Odisha";
+            person.City = "Balangir";
+            person.State = "Odisha";
+            person.PostalCode = 767025;
+            person.PhoneNumber = 4578632;
+            person.Email = "abhilashmeher1234@gmail.com";
+            uC_1.addPerson(person);
+            uC_1.Display();*/
 
-            Console.WriteLine("To Check Both Line Equals or not by Equals method");
-            Console.WriteLine("Enter start and end points of First line: ");
-            int a1 = Convert.ToInt32(Console.ReadLine());
-            int b1 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter start and end points of Second line: ");
-            int a2 = Convert.ToInt32(Console.ReadLine());
-            int b2 = Convert.ToInt32(Console.ReadLine());
-            Program.UC_2_CheckLines(a1, b1, a2, b2);
+            /* UC_Program uC_2 = new UC_Program();
+             Person person = new Person();
+             Console.WriteLine("Enter First Name: ");
+             string fname = Console.ReadLine();
+             person.First_Name = fname;
+             Console.WriteLine("Enter Last Name: ");
+             string lname = Console.ReadLine();
+             person.Last_Name = lname;
+             Console.WriteLine("Enter Address ");
+             string address = Console.ReadLine();
+             person.Address = address;
+             Console.WriteLine("Enter City: ");
+             string city = Console.ReadLine();
+             person.City = city;
+             Console.WriteLine("Enter State: ");
+             string state = Console.ReadLine();
+             person.State = state;
+             Console.WriteLine("Enter pin code: ");
+             int pin = int.Parse(Console.ReadLine());
+             person.PostalCode = pin;
+             Console.WriteLine("Enter Phone Number: ");
+             long number = long.Parse(Console.ReadLine());
+             person.PhoneNumber = number;
+             Console.WriteLine("Enter Email id: ");
+             string email = Console.ReadLine();
+             person.Email = email;
+             uC_2.addPerson(person);
+             uC_2.Display();*/
 
-            Console.WriteLine("To Compare Both Line by CompareTo method");
-            Console.WriteLine("Please Enter the first line coordinates");
-            int l1 = Convert.ToInt32(Console.ReadLine());
-            int m1 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Enter start and end points of Second line: ");
-            int l2 = Convert.ToInt32(Console.ReadLine());
-            int m2 = Convert.ToInt32(Console.ReadLine());
-            Program.UC_3_CompareLines(l1, m1, l2, m2);
+            /* UC_Program uc_3 = new UC_Program();
+             uc_3.Display();
+             Console.WriteLine("Enter First name to Edit that particular Item: ");
+             string name=Console.ReadLine();
+             uc_3.EditPerson(name);
+             uc_3.Display();*/
 
+            UC_Program uc_4 = new UC_Program();
+            uc_4.Display();
+            Console.WriteLine("Enter First name to Delete that particular Item: ");
+            string name = Console.ReadLine();
+            uc_4.Remove(name);
+            uc_4.Display();
 
         }
     }
